@@ -3,3 +3,4 @@
 .pytest_cache
 __pycache__
 function usage.py
+simple_site2_test.py
