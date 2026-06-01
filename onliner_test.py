@@ -24,3 +24,5 @@ def test_open_browser(driver1):
     )
     print(f"Температура: {temperature}°")
     assert temperature >= 0, "Температура ниже 0 — тест провален, температура выше 0 - тест пройден"
+
+#не запускается с -headless
