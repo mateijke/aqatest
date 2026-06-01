@@ -20,7 +20,7 @@ def browser():
 @pytest.fixture
 def driver1():
     options = Options()
-    options.add_argument("--headless=new")
+
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
 
