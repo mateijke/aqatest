@@ -1,6 +1,8 @@
 name: Run autotests
 
 on:
+  schedule:
+    - cron: "50 11 * * *"  # каждый день в 14:50 по Минску (UTC+3)
   workflow_dispatch:
     inputs:
       deployment_target:
@@ -29,4 +31,3 @@ jobs:
 
       - name: Run tests
         run: pytest -v -k "not simple_site2_test and not onliner_test and not login_test.py"
-       
