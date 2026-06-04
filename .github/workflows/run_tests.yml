@@ -2,7 +2,7 @@ name: Run autotests
 
 on:
   schedule:
-    - cron: "50 11 * * *"  # каждый день в 14:50 по Минску (UTC+3)
+    - cron: "0 12 * * *"  # каждый день в +-15:00 по Минску (UTC+3)
   workflow_dispatch:
     inputs:
       deployment_target:
