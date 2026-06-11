@@ -1,3 +1,5 @@
+import time
+
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -29,4 +31,3 @@ def driver1():
     driver1.maximize_window()
     yield driver1
     driver1.quit()
-
