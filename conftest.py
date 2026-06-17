@@ -50,3 +50,19 @@ def driver2(request: SubRequest):
     yield driver2
     driver2.quit()
 
+
+
+@pytest.fixture
+def driver3():
+    chrome_options = Options()
+    chrome_options.add_argument("--incognito")
+    chrome_options.add_argument("--disable-notifications")
+    chrome_options.add_argument("--disable-popup-blocking")
+    chrome_options.add_experimental_option("prefs", {
+        "profile.default_content_setting_values.notifications": 2,
+        "profile.default_content_setting_values.popups": 2,
+    })
+    driver3 = webdriver.Chrome(options=chrome_options)
+    yield driver3
+    driver3.quit()
+
