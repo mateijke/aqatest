@@ -55,6 +55,7 @@ def driver2(request: SubRequest):
 @pytest.fixture
 def driver3():
     chrome_options = Options()
+    chrome_options.add_argument("--headless")
     chrome_options.add_argument("--incognito")
     chrome_options.add_argument("--disable-notifications")
     chrome_options.add_argument("--disable-popup-blocking")
