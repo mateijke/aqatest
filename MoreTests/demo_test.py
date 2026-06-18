@@ -1,20 +1,18 @@
-import pytest
+import os
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from dotenv import load_dotenv
+
+load_dotenv()
+LOGIN = os.getenv("LOGIN")
+PASSWORD = os.getenv("PASSWORD")
 
 
-@pytest.mark.parametrize(
-    ('login', 'password'),
-    [
-        ('standard_user', 'secret_sauce'),
-    ]
-)
-
-def test_login(driver3, login, password):
+def test_login(driver3):
     driver3.get("https://www.saucedemo.com/")
-    driver3.find_element(By.ID, 'user-name').send_keys(login)
-    driver3.find_element(By.ID, 'password').send_keys(password)
+    driver3.find_element(By.ID, 'user-name').send_keys(LOGIN)
+    driver3.find_element(By.ID, 'password').send_keys(PASSWORD)
     driver3.find_element(By.ID, 'login-button').click()
     assert "/inventory.html" in driver3.current_url
 
